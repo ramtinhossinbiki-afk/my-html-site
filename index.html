@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Birthday Page with Games</title>
+
 <style>
 :root{
   --sky:#bfe9ff;--accent:#ffd93b;--muted:#666;--text:#222;
@@ -84,10 +85,13 @@ input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
 }
 </style>
 </head>
+
 <body>
+
 <header>
   <div class="container nav">
     <div class="logo">HAPPY BIRTHDAY</div>
+
     <nav>
       <a href="#section1">FIRST</a>
       <a href="#section2">MFK</a>
@@ -97,6 +101,8 @@ input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
       <a href="#section6">MORE P</a>
       <a href="#section4">GMAIL</a>
     </nav>
+
+    <button id="langToggle" class="btn">FA / EN</button>
   </div>
 </header>
 
@@ -107,90 +113,101 @@ input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
       <div class="left">
         <button class="play-btn" id="playToggle" aria-pressed="false">play</button>
         <audio id="t-audio" preload="none">
-          <source src="https://raw.githubusercontent.com/USERNAME/REPO/main/music/h.ht" type="audio/mpeg">can't play
+          <source src="https://dl.musicdel.ir/Music/1403/11/Hooman%20Gamno-Tavallod%20-musicdel.ir%20128.mp3" type="audio/mpeg">
         </audio>
       </div>
+
       <div style="width:420px;text-align:center;">
-        <img id="hero-img" class="img" src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/spongebob.png" alt="Birthday Card">
-        <input id="file-hero" type="file" accept="image/*" style="display:none">
+        <img id="hero-img" class="img" src="https://www.jowhareh.com/images/Jowhareh/galleries_5/large_a7311ee2-0d15-4368-8e28-fb06484025e8.webp">
       </div>
     </div>
   </section>
 
   <section id="section2" class="section ai-section">
-    <h2>Message for Birth</h2>
+    <h2 id="msg-title">Message for Birth</h2>
+
     <div class="page-two">
       <div class="txt">
-        <p>Kasra, today is your day; the day when all smiles light up just for you.  
-        May your path be filled with joy, laughter, and all the good things in life!</p>
+        <p id="birth-text">
+          Kasra, today is your day; the day when all smiles light up just for you.
+          May your path be filled with joy, laughter, and all the good things in life!
+        </p>
       </div>
+
       <div class="img-side">
-        <img id="side-img" class="img" src="https://i.imgur.com/yMZML7z.png" alt="Gift Image">
+        <img class="img" src="https://www.jowhareh.com/images/Jowhareh/galleries_5/large_395634d6-b679-405d-9953-f87da780f472.webp">
       </div>
     </div>
   </section>
 
   <section id="section3" class="section ai-section">
-    <h2>Page Builder</h2>
+    <h2 id="builder-title">Page Builder</h2>
+
     <div class="creator">
-      <img id="creator-pic" src="https://i.imgur.com/mHUVP8k.jpg" alt="Creator">
+      <img src="https://raw.githubusercontent.com/ramtinhossinbiki-afk/my-html-site/main/d.jpeg">
       <div>
-        <h3>Designer: Ramtin HB</h3>
-        <p class="small">This page is designed for Kasra's happiness...</p>
+        <h3 id="designer-title">Designer: Ramtin HB</h3>
+        <p class="small" id="designer-small">
+          This page is designed for Kasra's happiness...
+        </p>
       </div>
     </div>
   </section>
 
   <section id="section5" class="section ai-section">
-    <h2>Games</h2>
+    <h2 id="games-title">Games</h2>
     <div class="card-grid">
       <div class="game-card">
-        <img src="https://i.imgur.com/ZU9uukA.png" alt="Minecraft Classic">
-        <p>Minecraft: Explore and build in the classic world of Minecraft.</p>
+        <img src="https://i.imgur.com/ZU9uukA.png">
+        <p id="game1-text">Minecraft: Explore and build in the classic world of Minecraft.</p>
         <button class="btn" onclick="openOverlay('https://classic.minecraft.net/')">Open Minecraft</button>
       </div>
+
       <div class="game-card">
-        <img src="https://i.imgur.com/lxWYXgz.png" alt="Crazy Game">
-        <p>Crazy Game: Play fun online games at Crazy Games website.</p>
+        <img src="https://i.imgur.com/lxWYXgz.png">
+        <p id="game2-text">Crazy Game: Play fun online games at Crazy Games website.</p>
         <button class="btn" onclick="openOverlay('https://www.crazygames.com/')">Open Crazy Game</button>
       </div>
     </div>
   </section>
 
   <section id="section7" class="section ai-section">
-    <h2>Artificial Intelligence</h2>
+    <h2 id="ai-title">Artificial Intelligence</h2>
     <div class="card-grid">
       <div class="game-card">
-        <img src="https://i.imgur.com/64u3Y2O.png" alt="Chat GPT">
-        <p>Chat GPT</p>
+        <img src="https://i.imgur.com/64u3Y2O.png">
+        <p id="chat-text">Chat GPT</p>
         <button class="btn" onclick="openOverlay('https://chat.openai.com')">Open Chat GPT</button>
       </div>
+
       <div class="game-card">
-        <img src="https://i.imgur.com/JlHcucD.png" alt="Copilot">
-        <p>Copilot</p>
+        <img src="https://i.imgur.com/JlHcucD.png">
+        <p id="copilot-text">Copilot</p>
         <button class="btn" onclick="openOverlay('https://copilot.microsoft.com/')">Open Copilot</button>
       </div>
     </div>
   </section>
 
   <section id="section6" class="section ai-section">
-    <h2>More Pictures</h2>
+    <h2 id="more-title">More Pictures</h2>
     <div class="card-grid">
-      <div class="card"><img src="https://i.imgur.com/ZLU4y7Z.png" alt="Picture 2"></div>
-      <div class="card"><img src="https://i.imgur.com/5pG3LBc.png" alt="Picture 3"></div>
+      <div class="card"><img src="https://i.imgur.com/ZLU4y7Z.png"></div>
+      <div class="card"><img src="https://i.imgur.com/5pG3LBc.png"></div>
     </div>
+
     <div style="text-align:center; margin-top:16px;">
       <button class="btn" onclick="openOverlay('https://unsplash.com/s/photos/birthday')">More Picture</button>
     </div>
   </section>
 
   <section id="section4" class="section ai-section">
-    <h2>Send Birthday Greetings</h2>
+    <h2 id="send-title">Send Birthday Greetings</h2>
+
     <form id="mail-form" onsubmit="return handleMail(event)">
       <div class="field"><input id="sender-name" required placeholder="Your Name"></div>
       <div class="field"><input id="sender-email" required placeholder="Your Gmail" type="email"></div>
       <div class="field"><textarea id="sender-msg" required placeholder="Your Text" rows="5"></textarea></div>
-      <button class="btn" type="submit">Post</button>
+      <button class="btn" type="submit" id="send-btn">Post</button>
     </form>
   </section>
 
@@ -208,38 +225,49 @@ input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
 </footer>
 
 <script>
-const hiddenHero = document.getElementById('file-hero');
-if(hiddenHero){
-  hiddenHero.addEventListener('change', e=>{
-    const f=e.target.files[0];
-    if(!f) return;
-    const r=new FileReader();
-    r.onload=ev=>document.getElementById('hero-img').src=ev.target.result;
-    r.readAsDataURL(f);
-  });
-}
+// -------- HERO SLIDESHOW ----------
+const heroImg = document.getElementById("hero-img");
+const heroPics = [
+  "https://cdn.nody.ir/files/2023/02/25/nody-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%BE%D8%B1%D9%88%D9%81%D8%A7%DB%8C%D9%84-1677312322.jpg",
+  "https://cdn.nody.ir/files/2023/02/25/nody-%D9%BE%D8%A7%D8%AA%D8%B1%D9%8A%D9%83-%D9%83%D9%8A%D9%88%D8%AA-1677312323.jpg",
+  "https://www.jowhareh.com/images/Jowhareh/galleries_11/large_27fc96bf-b1c0-43cf-911c-76a5178ccc5d.webp",
+];
+let index = 0;
+setInterval(() => {
+  index = (index + 1) % heroPics.length;
+  heroImg.src = heroPics[index];
+}, 5000);
 
+// -------- MUSIC BUTTON ----------
 const btn = document.getElementById('playToggle');
 const audio = document.getElementById('t-audio');
-if(btn && audio){
-  btn.addEventListener('click', ()=>{
-    if(audio.paused){ audio.play(); btn.textContent='stop'; btn.setAttribute('aria-pressed','true'); }
-    else{ audio.pause(); audio.currentTime=0; btn.textContent='play again'; btn.setAttribute('aria-pressed','false'); }
-  });
-}
+btn.addEventListener('click', ()=>{
+  if(audio.paused){
+    audio.play();
+    btn.textContent='stop';
+  } else {
+    audio.pause();
+    audio.currentTime=0;
+    btn.textContent='play again';
+  }
+});
 
+// -------- EMAIL SEND ----------
 function handleMail(e){
   e.preventDefault();
   const name = encodeURIComponent(document.getElementById('sender-name').value);
   const email = encodeURIComponent(document.getElementById('sender-email').value);
   const msg = encodeURIComponent(document.getElementById('sender-msg').value +
     "\n\n---\nSent by: " + decodeURIComponent(name) + " (<" + decodeURIComponent(email) + ">)");
-  const receiver = "example@gmail.com"; 
+
+  const receiver = "example@gmail.com";
   const subject = encodeURIComponent('Birthday Greetings');
+
   window.location.href = `mailto:${receiver}?subject=${subject}&body=${msg}`;
   return false;
 }
 
+// -------- GAME OVERLAY ----------
 function openOverlay(url){
   document.getElementById('gameFrame').src = url;
   document.getElementById('gameOverlay').style.display = 'flex';
@@ -248,6 +276,88 @@ function closeOverlay(){
   document.getElementById('gameOverlay').style.display = 'none';
   document.getElementById('gameFrame').src = '';
 }
+
+// -------- LANGUAGE SYSTEM ----------
+const langBtn = document.getElementById("langToggle");
+
+const texts = {
+  en: {
+    msgBirth: "Kasra, today is your day; the day when all smiles light up just for you. May your path be filled with joy, laughter, and all the good things in life!",
+    designerSmall: "This page is designed for Kasra's happiness...",
+    sendTitle: "Send Birthday Greetings",
+    yourName: "Your Name",
+    yourGmail: "Your Gmail",
+    yourText: "Your Text",
+    post: "Post",
+    msgTitle: "Message for Birth",
+    builderTitle: "Page Builder",
+    designerTitle: "Designer: Ramtin HB",
+    gamesTitle: "Games",
+    game1Text: "Minecraft: Explore and build in the classic world of Minecraft.",
+    game2Text: "Crazy Game: Play fun online games at Crazy Games website.",
+    aiTitle: "Artificial Intelligence",
+    chatText: "Chat GPT",
+    copilotText: "Copilot",
+    moreTitle: "More Pictures"
+  },
+  fa: {
+    msgBirth: "کسری امروز روز توست؛ روزی که همه لبخندها مخصوص تو روشن می‌شوند. امیدوارم مسیرت پر از شادی، خنده و بهترین اتفاق‌ها باشد!",
+    designerSmall: "این صفحه برای خوشحال کردن کسری طراحی شده...",
+    sendTitle: "ارسال پیام تبریک",
+    yourName: "نام شما",
+    yourGmail: "ایمیل شما",
+    yourText: "متن پیام",
+    post: "ارسال",
+    msgTitle: "پیام تبریک",
+    builderTitle: "سازنده صفحه",
+    designerTitle: "طراح: رامتین HB",
+    gamesTitle: "بازی‌ها",
+    game1Text: "Minecraft: در دنیای کلاسیک ماینکرافت کاوش و ساخت کنید.",
+    game2Text: "Crazy Game: بازی‌های آنلاین سرگرم‌کننده در وبسایت Crazy Games.",
+    aiTitle: "هوش مصنوعی",
+    chatText: "چت GPT",
+    copilotText: "کاپی‌لوت",
+    moreTitle: "تصاویر بیشتر"
+  }
+};
+
+function setLang(lang){
+  localStorage.setItem("lang", lang);
+
+  // متن‌ها
+  document.getElementById("birth-text").textContent = texts[lang].msgBirth;
+  document.getElementById("designer-small").textContent = texts[lang].designerSmall;
+  document.getElementById("send-title").textContent = texts[lang].sendTitle;
+
+  document.getElementById("sender-name").placeholder = texts[lang].yourName;
+  document.getElementById("sender-email").placeholder = texts[lang].yourGmail;
+  document.getElementById("sender-msg").placeholder = texts[lang].yourText;
+
+  document.getElementById("send-btn").textContent = texts[lang].post;
+
+  document.getElementById("msg-title").textContent = texts[lang].msgTitle;
+  document.getElementById("builder-title").textContent = texts[lang].builderTitle;
+  document.getElementById("designer-title").textContent = texts[lang].designerTitle;
+  document.getElementById("games-title").textContent = texts[lang].gamesTitle;
+  document.getElementById("game1-text").textContent = texts[lang].game1Text;
+  document.getElementById("game2-text").textContent = texts[lang].game2Text;
+  document.getElementById("ai-title").textContent = texts[lang].aiTitle;
+  document.getElementById("chat-text").textContent = texts[lang].chatText;
+  document.getElementById("copilot-text").textContent = texts[lang].copilotText;
+  document.getElementById("more-title").textContent = texts[lang].moreTitle;
+
+  // تغییر متن دکمه
+  langBtn.textContent = lang === "en" ? "FA" : "EN";
+}
+
+// بارگذاری اولیه زبان
+setLang(localStorage.getItem("lang") || "en");
+
+// تغییر زبان با دکمه
+langBtn.addEventListener("click", ()=>{
+  const current = localStorage.getItem("lang") || "en";
+  setLang(current === "en" ? "fa" : "en");
+});
 </script>
 
 </body>

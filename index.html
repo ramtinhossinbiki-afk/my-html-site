@@ -98,6 +98,7 @@ input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
       <a href="#section3">MAKER</a>
       <a href="#section5">GAME</a>
       <a href="#section7">AI</a>
+      <a href="#section10">CP</a>
       <a href="#section6">MORE P</a>
       <a href="#section4">GMAIL</a>
     </nav>
@@ -188,6 +189,13 @@ input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
     </div>
   </section>
 
+  <section id="section10" class="section ai-section">
+    <h2 id="mor-title">GIFT CARD</h2>
+    <div style="text-align:center; margin-top:16px;">
+      <button class="btn" onclick="openOverlay('https://digipostal.ir/chn5oth')">Open Gift Card</button>
+    </div>
+  </section>
+
   <section id="section6" class="section ai-section">
     <h2 id="more-title">More Pictures</h2>
     <div class="card-grid">
@@ -221,15 +229,100 @@ input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
 </div>
 
 <footer>
-  <div class="container center">KASRA’S BIRTHDAY · MADE BY RHBC · MADE IN 2025</div>
+  <div class="container center">KASRA'S BIRTHDAY · MADE BY RHBC · MADE IN 2025</div>
 </footer>
 
 <script>
+// -------- LANGUAGE SYSTEM ----------
+const langBtn = document.getElementById("langToggle");
+
+const texts = {
+  en: {
+    msgBirth: "Kasra, today is your day; the day when all smiles light up just for you. May your path be filled with joy, laughter, and all the good things in life!",
+    designerSmall: "This page is designed for Kasra's happiness...",
+    sendTitle: "Send Birthday Greetings",
+    yourName: "Your Name",
+    yourGmail: "Your Gmail",
+    yourText: "Your Text",
+    post: "Post",
+    msgTitle: "Message for Birth",
+    builderTitle: "Page Builder",
+    designerTitle: "Designer: Ramtin HB",
+    gamesTitle: "Games",
+    game1Text: "Minecraft: Explore and build in the classic world of Minecraft.",
+    game2Text: "Crazy Game: Play fun online games at Crazy Games website.",
+    aiTitle: "Artificial Intelligence",
+    chatText: "Chat GPT",
+    copilotText: "Copilot",
+    moreTitle: "More Pictures",
+    morTitle: "GIFT CARD"
+  },
+  fa: {
+    msgBirth: "کسری امروز روز توست؛ روزی که همه لبخندها مخصوص تو روشن می‌شوند. امیدوارم مسیرت پر از شادی، خنده و بهترین اتفاق‌ها باشد!",
+    designerSmall: "این صفحه برای خوشحال کردن کسری طراحی شده...",
+    sendTitle: "ارسال پیام تبریک",
+    yourName: "نام شما",
+    yourGmail: "ایمیل شما",
+    yourText: "متن پیام",
+    post: "ارسال",
+    msgTitle: "پیام تبریک",
+    builderTitle: "سازنده صفحه",
+    designerTitle: "طراح: رامتین HB",
+    gamesTitle: "بازی‌ها",
+    game1Text: "Minecraft: در دنیای کلاسیک ماینکرافت کاوش و ساخت کنید.",
+    game2Text: "Crazy Game: بازی‌های آنلاین سرگرم‌کننده در وبسایت Crazy Games.",
+    aiTitle: "هوش مصنوعی",
+    chatText: "چت GPT",
+    copilotText: "کاپی‌لوت",
+    moreTitle: "تصاویر بیشتر",
+    morTitle: "کارت هدیه"
+  }
+};
+
+function setLang(lang){
+  localStorage.setItem("lang", lang);
+
+  // متن‌ها
+  document.getElementById("birth-text").textContent = texts[lang].msgBirth;
+  document.getElementById("designer-small").textContent = texts[lang].designerSmall;
+  document.getElementById("send-title").textContent = texts[lang].sendTitle;
+
+  document.getElementById("sender-name").placeholder = texts[lang].yourName;
+  document.getElementById("sender-email").placeholder = texts[lang].yourGmail;
+  document.getElementById("sender-msg").placeholder = texts[lang].yourText;
+
+  document.getElementById("send-btn").textContent = texts[lang].post;
+
+  document.getElementById("msg-title").textContent = texts[lang].msgTitle;
+  document.getElementById("builder-title").textContent = texts[lang].builderTitle;
+  document.getElementById("designer-title").textContent = texts[lang].designerTitle;
+  document.getElementById("games-title").textContent = texts[lang].gamesTitle;
+  document.getElementById("game1-text").textContent = texts[lang].game1Text;
+  document.getElementById("game2-text").textContent = texts[lang].game2Text;
+  document.getElementById("ai-title").textContent = texts[lang].aiTitle;
+  document.getElementById("chat-text").textContent = texts[lang].chatText;
+  document.getElementById("copilot-text").textContent = texts[lang].copilotText;
+  document.getElementById("more-title").textContent = texts[lang].moreTitle;
+  document.getElementById("mor-title").textContent = texts[lang].morTitle;
+
+  // تغییر متن دکمه
+  langBtn.textContent = lang === "en" ? "FA" : "EN";
+}
+
+// بارگذاری اولیه زبان
+setLang(localStorage.getItem("lang") || "en");
+
+// تغییر زبان با دکمه
+langBtn.addEventListener("click", ()=>{
+  const current = localStorage.getItem("lang") || "en";
+  setLang(current === "en" ? "fa" : "en");
+});
+
 // -------- HERO SLIDESHOW ----------
 const heroImg = document.getElementById("hero-img");
 const heroPics = [
   "https://cdn.nody.ir/files/2023/02/25/nody-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%BE%D8%B1%D9%88%D9%81%D8%A7%DB%8C%D9%84-1677312322.jpg",
-  "https://cdn.nody.ir/files/2023/02/25/nody-%D9%BE%D8%A7%D8%AA%D8%B1%D9%8A%D9%83-%D9%83%D9%8A%D9%88%D8%AA-1677312323.jpg",
+  "https://cdn.nody.ir/files/2023/02/25/nody-%D9%BE%D8%A7%D8%AA%D8%B1%DB%8C%DA%A9-%DA%A9%DB%8C%D9%88%D8%AA-1677312323.jpg",
   "https://www.jowhareh.com/images/Jowhareh/galleries_11/large_27fc96bf-b1c0-43cf-911c-76a5178ccc5d.webp",
   "https://raw.githubusercontent.com/ramtinhossinbiki-afk/my-html-site/main/craiyon_203931_Sponge_bob_themed_birthday_card.png",
   
@@ -278,90 +371,7 @@ function closeOverlay(){
   document.getElementById('gameOverlay').style.display = 'none';
   document.getElementById('gameFrame').src = '';
 }
-
-// -------- LANGUAGE SYSTEM ----------
-const langBtn = document.getElementById("langToggle");
-
-const texts = {
-  en: {
-    msgBirth: "Kasra, today is your day; the day when all smiles light up just for you. May your path be filled with joy, laughter, and all the good things in life!",
-    designerSmall: "This page is designed for Kasra's happiness...",
-    sendTitle: "Send Birthday Greetings",
-    yourName: "Your Name",
-    yourGmail: "Your Gmail",
-    yourText: "Your Text",
-    post: "Post",
-    msgTitle: "Message for Birth",
-    builderTitle: "Page Builder",
-    designerTitle: "Designer: Ramtin HB",
-    gamesTitle: "Games",
-    game1Text: "Minecraft: Explore and build in the classic world of Minecraft.",
-    game2Text: "Crazy Game: Play fun online games at Crazy Games website.",
-    aiTitle: "Artificial Intelligence",
-    chatText: "Chat GPT",
-    copilotText: "Copilot",
-    moreTitle: "More Pictures"
-  },
-  fa: {
-    msgBirth: "کسری امروز روز توست؛ روزی که همه لبخندها مخصوص تو روشن می‌شوند. امیدوارم مسیرت پر از شادی، خنده و بهترین اتفاق‌ها باشد!",
-    designerSmall: "این صفحه برای خوشحال کردن کسری طراحی شده...",
-    sendTitle: "ارسال پیام تبریک",
-    yourName: "نام شما",
-    yourGmail: "ایمیل شما",
-    yourText: "متن پیام",
-    post: "ارسال",
-    msgTitle: "پیام تبریک",
-    builderTitle: "سازنده صفحه",
-    designerTitle: "طراح: رامتین HB",
-    gamesTitle: "بازی‌ها",
-    game1Text: "Minecraft: در دنیای کلاسیک ماینکرافت کاوش و ساخت کنید.",
-    game2Text: "Crazy Game: بازی‌های آنلاین سرگرم‌کننده در وبسایت Crazy Games.",
-    aiTitle: "هوش مصنوعی",
-    chatText: "چت GPT",
-    copilotText: "کاپی‌لوت",
-    moreTitle: "تصاویر بیشتر"
-  }
-};
-
-function setLang(lang){
-  localStorage.setItem("lang", lang);
-
-  // متن‌ها
-  document.getElementById("birth-text").textContent = texts[lang].msgBirth;
-  document.getElementById("designer-small").textContent = texts[lang].designerSmall;
-  document.getElementById("send-title").textContent = texts[lang].sendTitle;
-
-  document.getElementById("sender-name").placeholder = texts[lang].yourName;
-  document.getElementById("sender-email").placeholder = texts[lang].yourGmail;
-  document.getElementById("sender-msg").placeholder = texts[lang].yourText;
-
-  document.getElementById("send-btn").textContent = texts[lang].post;
-
-  document.getElementById("msg-title").textContent = texts[lang].msgTitle;
-  document.getElementById("builder-title").textContent = texts[lang].builderTitle;
-  document.getElementById("designer-title").textContent = texts[lang].designerTitle;
-  document.getElementById("games-title").textContent = texts[lang].gamesTitle;
-  document.getElementById("game1-text").textContent = texts[lang].game1Text;
-  document.getElementById("game2-text").textContent = texts[lang].game2Text;
-  document.getElementById("ai-title").textContent = texts[lang].aiTitle;
-  document.getElementById("chat-text").textContent = texts[lang].chatText;
-  document.getElementById("copilot-text").textContent = texts[lang].copilotText;
-  document.getElementById("more-title").textContent = texts[lang].moreTitle;
-
-  // تغییر متن دکمه
-  langBtn.textContent = lang === "en" ? "FA" : "EN";
-}
-
-// بارگذاری اولیه زبان
-setLang(localStorage.getItem("lang") || "en");
-
-// تغییر زبان با دکمه
-langBtn.addEventListener("click", ()=>{
-  const current = localStorage.getItem("lang") || "en";
-  setLang(current === "en" ? "fa" : "en");
-});
 </script>
 
 </body>
 </html>
-
